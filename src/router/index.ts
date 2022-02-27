@@ -1,4 +1,7 @@
-import { createRouter, createWebHashHistory } from "vue-router"
+import { createRouter, createWebHistory } from "vue-router";
+
+const { VITE_PUBLIC_PATH }: ImportMetaEnv = import.meta.env;
+
 
 const routes = [
     {
@@ -13,7 +16,8 @@ const routes = [
 ]
 
 const router = createRouter({
-    history: createWebHashHistory(),
+    history: createWebHistory(VITE_PUBLIC_PATH),
     routes,
+
 })
 export default router;
