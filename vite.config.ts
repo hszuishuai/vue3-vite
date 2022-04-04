@@ -19,6 +19,11 @@ export default defineConfig(({ command, mode }: ConfigEnv) => {
         "@": resolve(__dirname, 'src'),
       },
     },
+    define: {
+      'process.env': {
+        ...env
+      }
+    },
     plugins: [
       vue(),
       viteCompression({
@@ -74,7 +79,6 @@ export default defineConfig(({ command, mode }: ConfigEnv) => {
       // }),
     ],
 
-
     css: {
       postcss: {
         plugins: [
@@ -90,12 +94,11 @@ export default defineConfig(({ command, mode }: ConfigEnv) => {
           }
         ],
       },
-
       // 引入全局scss文件
       preprocessorOptions: {
-        // scss: {
-        //     additionalData: '@import "./src/styles/variables";',
-        // },
+        less: {
+          // additionalData: '@import "./src/styles/variables";',
+        },
       },
     },
 
@@ -123,19 +126,24 @@ export default defineConfig(({ command, mode }: ConfigEnv) => {
         },
       },
     },
+
     server: {
       port: 4000, // 设置服务启动端口号
       open: true, // 设置服务启动时是否自动打开浏览器
-      cors: true // 允许跨域
+      cors: true, // 允许跨域
       // 设置代理，根据我们项目实际情况配置
-      // proxy: {
-      //   '/api': {
-      //     target: 'http://xxx.xxx.xxx.xxx:8000',
-      //     changeOrigin: true,
-      //     secure: false,
-      //     rewrite: (path) => path.replace('/api/', '/')
-      //   }
-      // }
+      proxy: {
+        '/jueJinApi': {
+          target: 'https://www.hsshuaibi.club/jueJinApi',
+          changeOrigin: true,
+          secure: false,
+          headers: {
+            referer: "https://juejin.cn/",
+            origin: "https://juejin.cn"
+          },
+          rewrite: (path) => path.replace('/jueJinApi/', '/')
+        }
+      }
     }
   }
 })

@@ -3,10 +3,14 @@ import App from './App.vue'
 import router from "./router"
 import ElementPlus from "element-plus";
 import 'element-plus/dist/index.css'
+import Store from "@/store";
+import "@/style/reset.css";
 
 const app = createApp(App)
 
+app.use(Store);
 app.use(router);
+
 app.use(ElementPlus)
 app.mount('#app')
 

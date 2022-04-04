@@ -9,13 +9,17 @@
         "lint:style": "stylelint --fix src/**/*.{vue,css,sss,less,scss}"
     },
     "dependencies": {
+        "axios": "^0.26.1",
         "element-plus": "^2.0.2",
+        "less": "^4.1.2",
+        "pinia": "^2.0.12",
         "vue": "^3.2.25",
         "vue-router": "^4.0.12"
     },
     "devDependencies": {
         "@types/node": "^17.0.18",
         "@vitejs/plugin-vue": "^2.2.0",
+        "less-loader": "7.x",
         "stylelint": "^14.5.0",
         "stylelint-config-html": "^1.0.0",
         "stylelint-config-rational-order": "^0.1.2",
