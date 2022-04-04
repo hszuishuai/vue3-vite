@@ -33,4 +33,4 @@ jobs:
         pass: ${{ secrets.USER_PASS }}
         connect_timeout: 10s
         local: './dist/*'
-        remote: /hsshuaibi/juejin/dist
+        remote: /hsshuaibi/juejin
