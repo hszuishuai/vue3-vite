@@ -1,8 +1,5 @@
 <template>
   <div id="home">
-    <el-button @click="handlerRouter('front')">首页</el-button>
-    <el-button @click="handlerRouter('course')">课程</el-button>
-    <search-input ref="search" @search="handlerSearch" />
     <!-- {{ isSearchFocus }} -->
     <router-view :key="route.path" />
   </div>

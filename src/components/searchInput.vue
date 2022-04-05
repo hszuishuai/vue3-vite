@@ -74,7 +74,6 @@ defineExpose({
 <style lang="less" scoped>
 .search-form {
   width: 260px;
-  margin: 50px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -86,7 +85,7 @@ defineExpose({
   -webkit-transition: width 0.8s; /* Safari and Chrome */
   -o-transition: width 0.8s; /* Opera */
   .search-input {
-    width: 240px;
+    width: 216px;
     border: none;
     padding: 10px 12px;
     outline: none;
@@ -97,7 +96,7 @@ defineExpose({
     -webkit-transition: width 1s; /* Safari and Chrome */
     -o-transition: width 1s; /* Opera */
     &:focus {
-      width: 300px;
+      width: 316px;
       border: none;
     }
   }
