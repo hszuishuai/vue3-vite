@@ -44,17 +44,19 @@ const isSearchFocus = computed(() => search?.value?.isResourceVisible ?? false);
 .navigation {
   position: relative;
   height: 60px;
+  box-sizing: border-box;
   &-container {
     position: fixed;
     top: 0;
     right: 0;
     left: 0;
+    z-index: 200;
     width: 100%;
     height: 60px;
-    background-color: #fff;
-    border-bottom: 1px solid #f1f1f1;
     display: flex;
     align-items: center;
+    background-color: #fff;
+    border-bottom: 1px solid #f1f1f1;
     .logo {
       margin-left: 20px;
       margin-right: 24px;

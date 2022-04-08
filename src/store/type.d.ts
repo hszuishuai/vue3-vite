@@ -8,7 +8,5 @@ export type IUserStore = {
 }
 
 export type IUIStore = {
-    menus: {
-        categoryBriefs: Array<ICategoryBriefs>
-    }
+    categoryBriefs: Array<ICategoryBriefs>
 }

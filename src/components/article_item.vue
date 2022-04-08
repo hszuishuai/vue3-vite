@@ -58,7 +58,7 @@ a {
     text-decoration: none;
 }
 .entry {
-    width: 800px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     padding: 20px;

@@ -179,3 +179,36 @@ export interface ICategoryBriefs {
 }
 
 
+export interface IAdvert {
+    id: number;
+    advert_id: string;
+    user_id: string;
+    item_id: string;
+    item_type: number;
+    platform: number;
+    layout: number;
+    position: number;
+    advert_type: number;
+    station_type: number;
+    author_name: string;
+    author_id: number;
+    title: string;
+    brief: string;
+    url: string;
+    picture: string;
+    avatar: string;
+    start_time: string;
+    end_time: string;
+    ctime: string;
+    mtime: string;
+    sale_count: number;
+    sale_price: number;
+    discount_rate: number;
+    digg_count: number;
+    comment_count: number;
+    topic: string;
+    topic_id: string;
+    status: number;
+}
+
+

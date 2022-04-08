@@ -10,6 +10,12 @@ const ARTICLE_CONFIG = {
     client_type: 2608
 }
 
+const ADVERT_CONFIG = {
+    "layout": 1,
+    "platform": 2608,
+    "position": 100
+}
+
 async function getArticleList(cate_id: string | undefined) {
     const articleList = await request<Array<API.RecommendArticle>>({
         method: "POST",
@@ -43,7 +49,26 @@ async function getCategoryBriefs() {
     return categoryBriefs;
 }
 
+async function getAdverts() {
+    const adverts = await request<Array<API.IAdvert>>({
+        method: "POST",
+        url: "/content_api/v1/advert/query_adverts",
+        params: {
+            aid: API_CONFIG.AID,
+            uuid: API_CONFIG.UUID,
+        },
+        data: {
+            ...ADVERT_CONFIG
+        }
+    });
+    console.log("--getAdverts--", adverts);
+    return adverts;
+}
+
+
+
 export default {
     getArticleList,
-    getCategoryBriefs
+    getCategoryBriefs,
+    getAdverts
 }

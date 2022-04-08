@@ -5,10 +5,7 @@ import { IUIStore } from "./type"
 const useUIStore = defineStore(StoreName.UI, {
   state: (): IUIStore => {
     return {
-      menus: {
-        categoryBriefs: []
-      }
-
+      categoryBriefs: []
     }
   },
   getters: {
@@ -16,7 +13,7 @@ const useUIStore = defineStore(StoreName.UI, {
   actions: {
     async setCategoryBrief(categoryBriefs) {
       console.log("--setCategoryBrief--", categoryBriefs)
-      this.menus.categoryBriefs = categoryBriefs
+      this.categoryBriefs = categoryBriefs
     }
   }
 })

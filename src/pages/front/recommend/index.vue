@@ -1,6 +1,5 @@
 <template>
   <div id="recommend">
-    <category-brief />
     <div class="view-content">
       <div class="article-list">
         <article-item
@@ -31,8 +30,8 @@ const uiStore = useUIStore();
 console.log("route.path", route.path);
 
 onMounted(async () => {
-  const { categoryBriefs } = uiStore.menus;
-  console.log("--1", categoryBriefs);
+  const { categoryBriefs } = uiStore;
+  console.log("--1",uiStore, categoryBriefs);
   const categoryBrief = categoryBriefs.find((c) => route.path.includes(c.category_url));
 
   const briefId = categoryBrief?.category_id ?? undefined;
@@ -52,8 +51,9 @@ const handlerRouter = (type) => {
 
 <style scoped lang="less">
 .view-content {
-  max-width: 960px;
-  margin: auto;
+  //   max-width: 960px;
+  width: 700px;
+  //   margin: auto;
   background-color: #fff;
 }
 </style>
